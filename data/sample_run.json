@@ -1,0 +1,735 @@
+{
+  "rfp_run_id": "RFP-20260930-005840-3595",
+  "created_at": "2026-09-30T00:58:40+00:00",
+  "status": "COMPLETED",
+  "title": "Customer support platform - tender SRL/IT/2026/014",
+  "model": "gpt-6-luna",
+  "llm_mode": null,
+  "completed_at": "2026-09-30T00:59:00+00:00",
+  "error": null,
+  "engine": null,
+  "locked": false,
+  "locked_at": null,
+  "criteria": [
+    {
+      "criterion_id": 1,
+      "name": "Technical Capability",
+      "description": "Architecture, integrations, scalability, technical fit",
+      "weight": 35.0,
+      "max_score": 10.0,
+      "is_active": 1,
+      "updated_at": "2026-09-29T19:20:36+00:00"
+    },
+    {
+      "criterion_id": 2,
+      "name": "Implementation Plan",
+      "description": "Timeline, milestones, staffing, risk plan",
+      "weight": 15.0,
+      "max_score": 10.0,
+      "is_active": 1,
+      "updated_at": "2026-09-29T19:20:36+00:00"
+    },
+    {
+      "criterion_id": 3,
+      "name": "Commercial Value",
+      "description": "Pricing clarity, total cost, assumptions",
+      "weight": 20.0,
+      "max_score": 10.0,
+      "is_active": 1,
+      "updated_at": "2026-09-29T19:20:36+00:00"
+    },
+    {
+      "criterion_id": 4,
+      "name": "Security & Compliance",
+      "description": "Controls, certifications, privacy, auditability",
+      "weight": 20.0,
+      "max_score": 10.0,
+      "is_active": 1,
+      "updated_at": "2026-09-29T19:20:36+00:00"
+    },
+    {
+      "criterion_id": 5,
+      "name": "Support & Experience",
+      "description": "Support model, similar projects, references",
+      "weight": 10.0,
+      "max_score": 10.0,
+      "is_active": 1,
+      "updated_at": "2026-09-29T19:20:36+00:00"
+    }
+  ],
+  "warnings": [],
+  "suppliers": [
+    {
+      "supplier_name": "Meridian Softworks",
+      "submission_date": "2026-09-10",
+      "experience_rating": 4.5,
+      "file_name": "Meridian_Softworks_Technical_and_Commercial_Proposal.pdf",
+      "page_count": 4,
+      "attempts": 1,
+      "criteria": [
+        {
+          "criterion_id": 1,
+          "name": "Technical Capability",
+          "weight": 35.0,
+          "max_score": 10.0,
+          "score": 9.0,
+          "status": "OK",
+          "confidence": 0.94,
+          "justification": "The proposal gives a specific cloud architecture, named integrations, identity approach, and quantified scalability testing. It does not fully explain how the stated India-resident data approach meets the requirement for EU and India data residency.",
+          "evidence": "Horizontal autoscaling has been load-tested to 12,000 concurrent agents and 4,000 tickets per minute.",
+          "evidence_page": 2,
+          "grounded": true,
+          "strengths": [
+            "Kubernetes deployment across three Mumbai availability zones with Hyderabad warm standby",
+            "Pre-built SAP S/4HANA and Salesforce Commerce Cloud connectors",
+            "Quantified load-test capacity"
+          ],
+          "weaknesses": [
+            "EU data residency is described as optional, while the proposal also says customer data stays in India"
+          ],
+          "missing_information": [
+            "Clarification of how EU and India data residency requirements will be met"
+          ],
+          "benchmark": 9.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "weighted_points": 31.5
+        },
+        {
+          "criterion_id": 2,
+          "name": "Implementation Plan",
+          "weight": 15.0,
+          "max_score": 10.0,
+          "score": 8.0,
+          "status": "OK",
+          "confidence": 0.93,
+          "justification": "The 26-week plan specifies phases, milestones, exit criteria, staffing, and weekly RAID review. Risks have named owners, but mitigation actions and contingency plans are not described.",
+          "evidence": "Delivery takes 26 weeks in four phases, with a pilot in 20 Chennai stores before the national roll-out.",
+          "evidence_page": 3,
+          "grounded": true,
+          "strengths": [
+            "Four phases with weeks, milestones, and exit criteria",
+            "Named delivery roles and team sizes",
+            "Weekly RAID review and named owners for top risks"
+          ],
+          "weaknesses": [
+            "Risk mitigation and contingency actions are not specified"
+          ],
+          "missing_information": [
+            "Specific mitigation plans for the identified implementation risks"
+          ],
+          "benchmark": 9.0,
+          "gap": -1.0,
+          "relative_pct": 88.8889,
+          "weighted_points": 12.0
+        },
+        {
+          "criterion_id": 3,
+          "name": "Commercial Value",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 8.0,
+          "status": "OK",
+          "confidence": 0.95,
+          "justification": "Pricing is broken down by item and year, with a three-year total and stated assumptions. GST is excluded, travel can be billed separately, and legacy-ticket data cleansing is assigned to Sundaram.",
+          "evidence": "Three-year total: INR 12,31,00,000 excluding GST at 18%.",
+          "evidence_page": 3,
+          "grounded": true,
+          "strengths": [
+            "Annual itemized pricing for licences, implementation, and support",
+            "Three-year total and 36-month price-fix assumption stated",
+            "Travel and data-cleansing assumptions disclosed"
+          ],
+          "weaknesses": [
+            "GST is excluded from the stated total",
+            "Travel is billed separately up to the stated annual cap"
+          ],
+          "missing_information": [
+            "Potential costs beyond the stated travel allowance and scope assumptions"
+          ],
+          "benchmark": 8.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "weighted_points": 16.0
+        },
+        {
+          "criterion_id": 4,
+          "name": "Security & Compliance",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 9.0,
+          "status": "OK",
+          "confidence": 0.96,
+          "justification": "The response names current certifications with validity periods, encryption standards, data-region options, external penetration testing, and a DPDP Act data processing agreement. Further operational auditability details are not provided.",
+          "evidence": "Meridian holds ISO/IEC 27001:2022 (certificate IN-27K-44120, valid to March 2028) and a SOC 2 Type II report for the period April 2025 to March 2026.",
+          "evidence_page": 4,
+          "grounded": true,
+          "strengths": [
+            "ISO/IEC 27001:2022 certificate and SOC 2 Type II report identified",
+            "AES-256 at rest and TLS 1.3 in transit",
+            "Twice-yearly external penetration tests and DPDP Act data processing agreement"
+          ],
+          "weaknesses": [
+            "EU region is described as optional"
+          ],
+          "missing_information": [
+            "Detailed audit-log, customer audit-access, and incident-notification procedures"
+          ],
+          "benchmark": 9.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "weighted_points": 18.0
+        },
+        {
+          "criterion_id": 5,
+          "name": "Support & Experience",
+          "weight": 10.0,
+          "max_score": 10.0,
+          "score": 8.0,
+          "status": "OK",
+          "confidence": 0.92,
+          "justification": "The proposal specifies 24x7 premium support, a 15-minute P1 response, a named customer success manager, and relevant delivery experience. Reference contacts are only available on request, limiting immediate verification.",
+          "evidence": "Premium support is 24x7 with a 15-minute response for P1 incidents and a named customer success manager.",
+          "evidence_page": 4,
+          "grounded": true,
+          "strengths": [
+            "24x7 premium support with a stated P1 response time",
+            "Named customer success manager",
+            "38 contact centre projects and three listed retail references"
+          ],
+          "weaknesses": [
+            "Reference contacts are not included in the proposal"
+          ],
+          "missing_information": [
+            "Support escalation and resolution targets beyond P1 response time",
+            "Direct reference contact details"
+          ],
+          "benchmark": 8.5,
+          "gap": -0.5,
+          "relative_pct": 94.1176,
+          "weighted_points": 8.0
+        }
+      ],
+      "risks": [
+        "The proposal's EU residency description may need clarification against the stated requirement for EU and India data residency.",
+        "No instructions to the evaluator were identified in the supplier document."
+      ],
+      "overall_summary": "Meridian presents a detailed technical solution, phased implementation plan, itemized commercial proposal, and substantial security and support information. Key follow-ups are clarifying EU data residency, implementation risk mitigations, and obtaining direct reference contacts.",
+      "warnings": [],
+      "absolute_score": 85.5,
+      "ppi": 97.7451,
+      "final_rank": 1,
+      "rank_reason": "Highest PPI in the batch."
+    },
+    {
+      "supplier_name": "Tarang Systems",
+      "submission_date": "2026-09-09",
+      "experience_rating": 4.0,
+      "file_name": "Tarang Systems_Response_SRL-IT-2026-014.pdf",
+      "page_count": 4,
+      "attempts": 1,
+      "criteria": [
+        {
+          "criterion_id": 1,
+          "name": "Technical Capability",
+          "weight": 35.0,
+          "max_score": 10.0,
+          "score": 8.0,
+          "status": "OK",
+          "confidence": 0.88,
+          "justification": "Provides a clear cloud SaaS solution for 850 agents, named Azure regions, integration methods and existing SAP and Salesforce Commerce Cloud connectors. Performance, resilience and detailed capacity evidence are limited.",
+          "evidence": "REST and webhook APIs; SAP S/4HANA order lookup through our standard adapter.",
+          "evidence_page": 2,
+          "grounded": true,
+          "strengths": [
+            "Azure regions in Pune and Chennai with a stated 99.9% availability SLA",
+            "Specific SAP and Salesforce Commerce Cloud integration approaches",
+            "Unified agent workspace with order, returns and loyalty information"
+          ],
+          "weaknesses": [
+            "Limited detail on performance and scalability validation"
+          ],
+          "missing_information": [
+            "Detailed architecture and disaster recovery design",
+            "Integration security and API performance details"
+          ],
+          "benchmark": 9.0,
+          "gap": -1.0,
+          "relative_pct": 88.8889,
+          "weighted_points": 28.0
+        },
+        {
+          "criterion_id": 2,
+          "name": "Implementation Plan",
+          "weight": 15.0,
+          "max_score": 10.0,
+          "score": 9.0,
+          "status": "OK",
+          "confidence": 0.95,
+          "justification": "Sets out a 24-week phased delivery plan with milestones, a named delivery team, and specific governance and rollback measures. More detail on contingency buffers and dependencies would strengthen the plan.",
+          "evidence": "Risk plan: fortnightly steering meeting, risk register with owners, rollback plan for every wave.",
+          "evidence_page": 2,
+          "grounded": true,
+          "strengths": [
+            "Clear four-stage, 24-week timeline including pilot and rollout",
+            "Delivery roles and team sizes specified",
+            "Risk register, fortnightly steering and wave-level rollback plans"
+          ],
+          "weaknesses": [
+            "Contingency time and dependency management are not described"
+          ],
+          "missing_information": [
+            "Detailed resource allocation by phase",
+            "Risk escalation thresholds and contingency schedule"
+          ],
+          "benchmark": 9.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "weighted_points": 13.5
+        },
+        {
+          "criterion_id": 3,
+          "name": "Commercial Value",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 8.0,
+          "status": "OK",
+          "confidence": 0.93,
+          "justification": "Provides a three-year cost breakdown, included services, GST treatment and rates for extra integration work. Prices are fixed for only the first 12 months, with later increases capped at CPI; some cost assumptions remain unclear.",
+          "evidence": "Three-year total INR 8.39 crore plus GST. Prices fixed for 12 months, then capped at CPI.",
+          "evidence_page": 3,
+          "grounded": true,
+          "strengths": [
+            "Year-by-year subscription, implementation and support pricing",
+            "Identifies GST and the post-year-one CPI cap",
+            "Specifies included integration days, additional day rate and training"
+          ],
+          "weaknesses": [
+            "Prices are not fixed for the full contract term"
+          ],
+          "missing_information": [
+            "Detailed assumptions behind the 40 integration days",
+            "Other potential charges or exclusions beyond stated travel and GST"
+          ],
+          "benchmark": 8.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "weighted_points": 16.0
+        },
+        {
+          "criterion_id": 4,
+          "name": "Security & Compliance",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 7.0,
+          "status": "OK",
+          "confidence": 0.9,
+          "justification": "States ISO/IEC 27001:2022 certification, India data residency, encryption and role-based access with audit logs. SOC 2 is still in progress, and additional privacy and audit-control details are not provided.",
+          "evidence": "ISO/IEC 27001:2022 certified; SOC 2 Type II audit in progress, report expected Q1 2027.",
+          "evidence_page": 4,
+          "grounded": true,
+          "strengths": [
+            "ISO/IEC 27001:2022 certification stated",
+            "India data residency and encryption at rest and in transit stated",
+            "Role-based access and audit logs stated"
+          ],
+          "weaknesses": [
+            "SOC 2 Type II audit is not complete"
+          ],
+          "missing_information": [
+            "Privacy, retention and data deletion controls",
+            "Incident response and disaster recovery details",
+            "Audit-log scope and customer audit rights"
+          ],
+          "benchmark": 9.0,
+          "gap": -2.0,
+          "relative_pct": 77.7778,
+          "weighted_points": 14.0
+        },
+        {
+          "criterion_id": 5,
+          "name": "Support & Experience",
+          "weight": 10.0,
+          "max_score": 10.0,
+          "score": 8.0,
+          "status": "OK",
+          "confidence": 0.91,
+          "justification": "Describes 24x7 P1/P2 support with a 30-minute P1 response, a named customer success manager and quarterly service reviews. Lists three retail references and reports an average CSAT increase, but provides limited independently verifiable outcome or reference detail.",
+          "evidence": "Support 24x7 for P1 and P2, 30-minute P1 response; named customer success manager.",
+          "evidence_page": 4,
+          "grounded": true,
+          "strengths": [
+            "Defined support coverage and P1 response target",
+            "Named customer success manager and quarterly service reviews",
+            "Three retail references with agent counts and go-live years"
+          ],
+          "weaknesses": [
+            "No reference contacts are provided for the listed customers"
+          ],
+          "missing_information": [
+            "Support targets beyond P1 response time",
+            "Service resolution and escalation commitments",
+            "Verifiable detail behind the stated CSAT improvement"
+          ],
+          "benchmark": 8.5,
+          "gap": -0.5,
+          "relative_pct": 94.1176,
+          "weighted_points": 8.0
+        }
+      ],
+      "risks": [
+        "SOC 2 Type II audit is in progress, with the report expected in Q1 2027.",
+        "Pricing is fixed for 12 months only; additional integration days are chargeable at INR 72,000 per day.",
+        "The document does not provide detailed privacy, disaster recovery or performance validation evidence."
+      ],
+      "overall_summary": "Tarang Systems presents a specific implementation plan and a clearly itemized three-year commercial proposal, with relevant retail references and defined support coverage. Technical and security details are credible but leave gaps in performance validation, privacy controls and audit assurance.",
+      "warnings": [],
+      "absolute_score": 79.5,
+      "ppi": 91.0784,
+      "final_rank": 2,
+      "rank_reason": "Lower PPI than Meridian Softworks (91.08 vs 97.75)."
+    },
+    {
+      "supplier_name": "Northstar Consulting",
+      "submission_date": "2026-09-11",
+      "experience_rating": 5.0,
+      "file_name": "NSCS_Proposal_Final (signed).pdf",
+      "page_count": 2,
+      "attempts": 1,
+      "criteria": [
+        {
+          "criterion_id": 1,
+          "name": "Technical Capability",
+          "weight": 35.0,
+          "max_score": 10.0,
+          "score": 5.5,
+          "status": "OK",
+          "confidence": 0.91,
+          "justification": "The proposal identifies ServicePoint, asserts omnichannel capability, and reports a deployment at 1,100 agents, indicating potential scale. However, integration details are deferred until after award, and architecture and technical-fit specifics are not provided.",
+          "evidence": "The SAP and Salesforce integrations will be finalised in a joint workshop after award.",
+          "evidence_page": 1,
+          "grounded": true,
+          "strengths": [
+            "Named platform proposed",
+            "Claims deployment at 1,100 agents",
+            "Omnichannel ticketing marked compliant"
+          ],
+          "weaknesses": [
+            "SAP and Salesforce interface details are TBC",
+            "Architecture and scalability design are not described"
+          ],
+          "missing_information": [
+            "Integration specifications and dependencies",
+            "Technical architecture and capacity approach"
+          ],
+          "benchmark": 9.0,
+          "gap": -3.5,
+          "relative_pct": 61.1111,
+          "weighted_points": 19.25
+        },
+        {
+          "criterion_id": 2,
+          "name": "Implementation Plan",
+          "weight": 15.0,
+          "max_score": 10.0,
+          "score": 6.5,
+          "status": "OK",
+          "confidence": 0.94,
+          "justification": "A 22-week plan is broken into design, build and test, pilot, and rollout phases, with a senior programme manager and six consultants. Integration dates remain uncertain, and no explicit risk plan or milestone acceptance criteria are given.",
+          "evidence": "We estimate 22 weeks: 4 weeks design, 10 weeks build and test (integration dates TBC), 4 weeks pilot and 4 weeks rollout.",
+          "evidence_page": 1,
+          "grounded": true,
+          "strengths": [
+            "Phased timeline with durations",
+            "Programme manager experience and six-consultant team specified"
+          ],
+          "weaknesses": [
+            "Integration dates are TBC",
+            "No risk management plan described"
+          ],
+          "missing_information": [
+            "Milestone acceptance criteria",
+            "Staffing allocation by phase"
+          ],
+          "benchmark": 9.0,
+          "gap": -2.5,
+          "relative_pct": 72.2222,
+          "weighted_points": 9.75
+        },
+        {
+          "criterion_id": 3,
+          "name": "Commercial Value",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 7.0,
+          "status": "OK",
+          "confidence": 0.94,
+          "justification": "The proposal itemizes three-year licences, implementation, and annual maintenance/support, and states a total excluding GST and payment milestones. Additional integration charges may apply, while broader cost assumptions and potential costs are not fully detailed.",
+          "evidence": "Total (excluding GST) 7,50,00,000",
+          "evidence_page": 1,
+          "grounded": true,
+          "strengths": [
+            "Itemized prices for licences, implementation, and support",
+            "Payment schedule provided",
+            "Three-year pricing period stated"
+          ],
+          "weaknesses": [
+            "Integration charges can be additional",
+            "GST is excluded from the total"
+          ],
+          "missing_information": [
+            "Detailed cost assumptions and exclusions",
+            "Pricing beyond the stated three-year term"
+          ],
+          "benchmark": 8.0,
+          "gap": -1.0,
+          "relative_pct": 87.5,
+          "weighted_points": 14.0
+        },
+        {
+          "criterion_id": 4,
+          "name": "Security & Compliance",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 7.5,
+          "status": "OK",
+          "confidence": 0.93,
+          "justification": "The supplier states ISO/IEC 27001 certification and a current SOC 2 Type II report for the platform, alongside staff NDAs and annual security training. Hosting location options are described, but privacy controls and audit details are limited; EU residency costs extra.",
+          "evidence": "Northstar is ISO/IEC 27001 certified and ServicePoint holds a current SOC 2 Type II report.",
+          "evidence_page": 2,
+          "grounded": true,
+          "strengths": [
+            "ISO/IEC 27001 certification stated",
+            "Current SOC 2 Type II report stated",
+            "Staff NDAs and annual security training"
+          ],
+          "weaknesses": [
+            "EU data residency is an extra-cost option"
+          ],
+          "missing_information": [
+            "Specific privacy and data-handling controls",
+            "Audit access and reporting details"
+          ],
+          "benchmark": 9.0,
+          "gap": -1.5,
+          "relative_pct": 83.3333,
+          "weighted_points": 15.0
+        },
+        {
+          "criterion_id": 5,
+          "name": "Support & Experience",
+          "weight": 10.0,
+          "max_score": 10.0,
+          "score": 8.5,
+          "status": "OK",
+          "confidence": 0.94,
+          "justification": "Northstar reports 19 years of relevant implementation experience and more than 60 projects. It offers 24x7 service desk support, a one-hour critical-issue response, monthly reports, and three client references, though contact details are available only on request.",
+          "evidence": "Support is provided 24x7 through our Hyderabad service desk, with a 1-hour response for critical issues and a monthly service report.",
+          "evidence_page": 2,
+          "grounded": true,
+          "strengths": [
+            "24x7 support with critical response target",
+            "Monthly service reporting",
+            "Three retail references and relevant project experience stated"
+          ],
+          "weaknesses": [
+            "Reference contacts are available on request"
+          ],
+          "missing_information": [
+            "Support escalation and resolution targets",
+            "Reference contact details"
+          ],
+          "benchmark": 8.5,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "weighted_points": 8.5
+        }
+      ],
+      "risks": [
+        "Integration details and dates remain TBC and may affect scope, schedule, and cost.",
+        "Integration work beyond 40 person-days is chargeable at an additional stated rate.",
+        "No embedded instructions detected in the supplier document."
+      ],
+      "overall_summary": "Northstar presents relevant retail experience, a phased implementation estimate, itemized commercial pricing, stated security credentials, and a defined support model. The main concerns are deferred integration definition, limited implementation risk detail, possible additional integration charges, and incomplete privacy and technical architecture specifics.",
+      "warnings": [],
+      "absolute_score": 66.5,
+      "ppi": 76.3889,
+      "final_rank": 3,
+      "rank_reason": "Lower PPI than Tarang Systems (76.39 vs 91.08)."
+    },
+    {
+      "supplier_name": "QuickDesk Solutions",
+      "submission_date": "2026-09-08",
+      "experience_rating": 2.0,
+      "file_name": "QuickDesk - Proposal for Sundaram Retail.pdf",
+      "page_count": 2,
+      "attempts": 1,
+      "criteria": [
+        {
+          "criterion_id": 1,
+          "name": "Technical Capability",
+          "weight": 35.0,
+          "max_score": 10.0,
+          "score": 5.0,
+          "status": "OK",
+          "confidence": 0.88,
+          "justification": "The proposal identifies core platform features, a REST API, CSV import and a planned webhook approach for SAP and Salesforce. Integration scope is unresolved, and scalability beyond current customer experience is asserted rather than demonstrated.",
+          "evidence": "The exact scope will be worked out during the project.",
+          "evidence_page": 1,
+          "grounded": true,
+          "strengths": [
+            "Shared inbox for email, chat and phone tickets",
+            "REST API and CSV ticket import",
+            "Tested with 300 concurrent agents"
+          ],
+          "weaknesses": [
+            "SAP and Salesforce integration scope is not defined",
+            "Largest current customer has 60 agents"
+          ],
+          "missing_information": [
+            "Detailed architecture and technical specifications",
+            "Integration requirements, deliverables and acceptance criteria",
+            "Evidence supporting scalability to 850 agents"
+          ],
+          "benchmark": 9.0,
+          "gap": -4.0,
+          "relative_pct": 55.5556,
+          "weighted_points": 17.5
+        },
+        {
+          "criterion_id": 2,
+          "name": "Implementation Plan",
+          "weight": 15.0,
+          "max_score": 10.0,
+          "score": 6.0,
+          "status": "OK",
+          "confidence": 0.9,
+          "justification": "A 10-week schedule, phased activities and named staffing levels are provided. Risk management is only described generally, with no specific mitigation, dependencies or contingency plan.",
+          "evidence": "Weeks 1-2 account setup, weeks 3-7 configuration and ticket import, weeks 8-10 go-live for all stores together.",
+          "evidence_page": 1,
+          "grounded": true,
+          "strengths": [
+            "Phased 10-week timeline",
+            "Project lead and two implementation consultants identified"
+          ],
+          "weaknesses": [
+            "All stores go live together, with no phased rollout option described",
+            "Risk handling is reactive and unspecified"
+          ],
+          "missing_information": [
+            "Milestone deliverables and acceptance criteria",
+            "Dependencies and customer staffing requirements",
+            "Specific risk mitigations and contingency plan"
+          ],
+          "benchmark": 9.0,
+          "gap": -3.0,
+          "relative_pct": 66.6667,
+          "weighted_points": 9.0
+        },
+        {
+          "criterion_id": 3,
+          "name": "Commercial Value",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 8.0,
+          "status": "OK",
+          "confidence": 0.94,
+          "justification": "The quote itemizes onboarding, subscription, included email support and a three-year total, and states the seat rate, quote validity, extra integration rate and GST treatment. Other potential costs and assumptions are not detailed.",
+          "evidence": "Total for 3 years\n5,27,60,000",
+          "evidence_page": 2,
+          "grounded": true,
+          "strengths": [
+            "One-time and subscription costs are itemized",
+            "Seat rate and three-year total are stated",
+            "Additional integration rate and GST treatment are disclosed"
+          ],
+          "weaknesses": [
+            "Integrations beyond the webhook connector are billed hourly",
+            "GST is extra"
+          ],
+          "missing_information": [
+            "Other possible charges or renewal pricing",
+            "Detailed assumptions behind onboarding and integration costs"
+          ],
+          "benchmark": 8.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "weighted_points": 16.0
+        },
+        {
+          "criterion_id": 4,
+          "name": "Security & Compliance",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 3.0,
+          "status": "OK",
+          "confidence": 0.96,
+          "justification": "The proposal mentions encryption and hosting, but does not identify the cloud provider or specific security controls. SOC 2 is not yet achieved, and customer data is stored in Singapore.",
+          "evidence": "We are working towards SOC 2 and hope to start the audit next year.",
+          "evidence_page": 2,
+          "grounded": true,
+          "strengths": [
+            "Encryption is stated",
+            "Data hosting location is disclosed"
+          ],
+          "weaknesses": [
+            "SOC 2 audit has not started",
+            "Cloud provider and encryption details are unspecified",
+            "Data is stored in Singapore"
+          ],
+          "missing_information": [
+            "Current certifications and security control details",
+            "Privacy, data residency and transfer safeguards",
+            "Audit logging, incident response and access-control details"
+          ],
+          "benchmark": 9.0,
+          "gap": -6.0,
+          "relative_pct": 33.3333,
+          "weighted_points": 6.0
+        },
+        {
+          "criterion_id": 5,
+          "name": "Support & Experience",
+          "weight": 10.0,
+          "max_score": 10.0,
+          "score": 6.0,
+          "status": "OK",
+          "confidence": 0.9,
+          "justification": "Support hours and a one-working-day reply target are specified, and the supplier reports 14 retail customers. References are only offered after shortlisting, and support coverage is limited to email.",
+          "evidence": "Support is by email, Monday to Saturday 10am-7pm IST, with replies within one working day.",
+          "evidence_page": 2,
+          "grounded": true,
+          "strengths": [
+            "Support hours and response target are stated",
+            "Supplier reports 14 retail customers"
+          ],
+          "weaknesses": [
+            "Support is email-only",
+            "References are not provided with the proposal"
+          ],
+          "missing_information": [
+            "Escalation process and severity-based response targets",
+            "Service availability and resolution commitments",
+            "Customer references or comparable project details"
+          ],
+          "benchmark": 8.5,
+          "gap": -2.5,
+          "relative_pct": 70.5882,
+          "weighted_points": 6.0
+        }
+      ],
+      "risks": [
+        "SAP and Salesforce integration scope is undecided and additional integration work may incur hourly charges.",
+        "SOC 2 is not yet achieved, and customer data is stored in Singapore.",
+        "The proposed 850-agent scale exceeds the supplier's stated largest customer of 60 agents."
+      ],
+      "overall_summary": "QuickDesk provides a defined basic platform, phased 10-week implementation outline and itemized three-year pricing. The proposal leaves material uncertainty around integrations, risk management, security assurances and demonstrated scalability.",
+      "warnings": [],
+      "absolute_score": 54.5,
+      "ppi": 63.1699,
+      "final_rank": 4,
+      "rank_reason": "Lower PPI than Northstar Consulting (63.17 vs 76.39)."
+    }
+  ],
+  "events": []
+}

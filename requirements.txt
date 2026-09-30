@@ -1,0 +1,11 @@
+streamlit>=1.40
+litellm>=1.50
+langgraph>=0.2
+pydantic>=2.7
+pymupdf>=1.24
+pypdf>=5.0
+pandas>=2.2
+openpyxl>=3.1
+reportlab>=4.2
+pytest>=8.0
+python-dotenv>=1.0
