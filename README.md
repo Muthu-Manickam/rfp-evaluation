@@ -4,7 +4,7 @@ A Streamlit app that reads supplier proposals (PDF), asks an LLM to score each o
 
 - Live app: https://rfp-evaluation-rclwmzy89ejm7cjc3lrd7k.streamlit.app/
 - Repository: https://github.com/Muthu-Manickam/rfp-evaluation
-- Model: `gpt-6-luna` through LiteLLM, temperature 0, JSON output
+- Model: `groq/openai/gpt-oss-120b` (free Groq key) through LiteLLM, temperature 0, JSON output; any LiteLLM model works
 - Stack: Streamlit, SQLite, LangGraph, LiteLLM, Pydantic, PyMuPDF, ReportLab, pytest
 - Demo: `docs/demo.mp4`, a walk through every page: criteria check, a live run, each Results tab, a score change and lock, history, and a run with a blank and a corrupted PDF
 
@@ -16,7 +16,7 @@ python db/seed.py
 cp .streamlit/secrets.toml.example .streamlit/secrets.toml
 streamlit run app.py
 ```
-Put your LiteLLM settings (`LITELLM_API_KEY`, `LITELLM_API_BASE`, `LITELLM_MODEL`) in a `.env` file in the project folder or in `.streamlit/secrets.toml`. Both are git-ignored. Without a key the app scores proposals offline by keyword matching (mock mode), so every page still works.
+Put your LiteLLM settings (`LITELLM_API_KEY`, `LITELLM_MODEL`, and `LITELLM_API_BASE` only for a proxy; a free key comes from console.groq.com) in a `.env` file in the project folder or in `.streamlit/secrets.toml`. Both are git-ignored. Without a key the app scores proposals offline by keyword matching (mock mode), so every page still works.
 
 ## Project layout
 ```
@@ -81,7 +81,8 @@ Example (from `tests/test_rank.py`): weights 50, 30 and 20. A scores 8, 6 and 10
 | a score like "8/10" | read as 8 (COERCED) |
 | a score outside 0 to max | clipped (CLIPPED) |
 | confidence given as a percentage | turned into 0 to 1 |
-| a quote not found in the PDF | kept, with a warning |
+| a quote not found in the PDF | kept, and marked "not found in the PDF" on the scorecard |
+| a quote of several sentences, or joined with ... | each sentence or part must be found in the PDF |
 
 ## Database
 Four tables in `data/rfp_evaluation.db`:
@@ -130,7 +131,7 @@ pytest
 ## Deploy
 1. Push to GitHub. `.gitignore` already leaves out the database, `.venv` and the secrets file.
 2. On share.streamlit.io create an app with `app.py` as the main file.
-3. Add `LITELLM_MODEL`, `LITELLM_API_BASE` and `LITELLM_API_KEY` in the app's Secrets.
+3. Add `LITELLM_API_KEY`, `LITELLM_MODEL` and `LLM_MODE` in the app's Secrets, as in `.streamlit/secrets.toml.example`.
 
 ## Screenshots
 | | |

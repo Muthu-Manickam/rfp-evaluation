@@ -69,8 +69,6 @@ def check_quotes(card, pages):
         result.grounded, page = find_quote(pages, result.evidence)
         if result.grounded:
             result.evidence_page = page
-        else:
-            card.warnings.append(f"{card.supplier_name}: the quote for '{result.name}' was not found in the PDF.")
 
 
 def validate(state):
@@ -169,6 +167,8 @@ def run_evaluation(proposals, title="", settings=None, progress=None):
         progress("Results saved")
     except Exception as error:
         message = hide_secrets(f"{type(error).__name__}: {error}", settings)
+        if type(error).__name__ == "RateLimitError":
+            message = "The model's free rate limit was reached. Wait a minute and run again."
         store.finish_run(run_id, "FAILED", [], error=message)
         raise RuntimeError(message) from None
     return store.get_run(run_id)

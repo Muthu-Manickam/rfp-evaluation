@@ -60,6 +60,9 @@ def test_quotes_are_found_in_the_pdf():
     pages = ["Our platform scales to 12,000 concurrent agents across three regions."]
     assert find_quote(pages, "scales to 12,000 concurrent agents") == (True, 1)
     assert find_quote(pages, "we hold ISO 27001 and SOC 2 Type II")[0] is False
+    assert find_quote(pages, "Our platform scales to 12,000... across three regions.") == (True, 1)
+    assert find_quote(pages, "Our platform scales to 12,000... we hold SOC 2 Type II")[0] is False
+    assert find_quote(pages, "Our platform scales to 12,000 concurrent agents. We hold SOC 2 Type II.")[0] is False
 
 
 def test_two_column_slides_keep_sentences_together():

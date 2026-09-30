@@ -43,9 +43,15 @@ def simplify(text):
 
 
 def find_quote(pages, quote):
-    wanted = simplify(quote)
-    if len(wanted) < 12:
+    parts = [part for part in re.split(r"\.\.\.|…|(?<=[.!?])\s+", quote or "") if len(simplify(part)) >= 12]
+    if not parts:
         return False, None
+    results = [find_part(pages, part) for part in parts]
+    return all(found for found, _ in results), results[0][1]
+
+
+def find_part(pages, part):
+    wanted = simplify(part)
     best_page, best_share = None, 0.0
     for number, page in enumerate(pages, start=1):
         text = simplify(page)
