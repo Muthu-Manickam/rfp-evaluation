@@ -55,13 +55,16 @@ def test_a_reply_that_is_not_json_is_asked_again(monkeypatch):
 
 def test_a_failed_run_does_not_show_the_key(monkeypatch):
     def failing_model(messages, settings):
-        raise RuntimeError("401 bad key sk-secret-123 for https://proxy.internal")
+        raise RuntimeError("401 bad key sk-secret-123 <html><h1>Blocked</h1> You are unable to access "
+                           "example.com</html>" + " padding" * 100)
 
     monkeypatch.setattr(run_module, "ask_model", failing_model)
     with pytest.raises(RuntimeError) as error:
-        settings = Settings("gpt-6-luna", "sk-secret-123", "https://proxy.internal", True)
+        settings = Settings("gpt-6-luna", "sk-secret-123", "https://llm.internal.example.com/v1", True)
         run_evaluation(sample_proposals()[:2], "Fail", settings)
-    assert "sk-secret-123" not in str(error.value) and "proxy.internal" not in str(error.value)
+    message = str(error.value)
+    assert "sk-secret-123" not in message and "example.com" not in message
+    assert "<" not in message and len(message) <= 300
     assert store.list_runs()[0]["status"] == "FAILED"
 
 

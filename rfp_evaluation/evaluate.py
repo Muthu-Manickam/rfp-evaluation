@@ -3,6 +3,7 @@ import os
 import re
 from dataclasses import dataclass
 from pathlib import Path
+from urllib.parse import urlparse
 
 from dotenv import load_dotenv
 
@@ -65,10 +66,14 @@ def get_settings():
 
 
 def hide_secrets(text, settings):
-    for secret in (settings.api_key, settings.api_base):
+    text = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", text, flags=re.S)
+    text = " ".join(re.sub(r"<[^>]+>", " ", text).split())
+    host = urlparse(settings.api_base or "").hostname or ""
+    domain = ".".join(host.split(".")[-2:])
+    for secret in (settings.api_key, settings.api_base, host, domain):
         if secret:
             text = text.replace(secret, "***")
-    return text
+    return text[:300]
 
 
 def first_messages(supplier, criteria, pages):

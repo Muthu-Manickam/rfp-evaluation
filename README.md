@@ -2,7 +2,8 @@
 
 A Streamlit app that reads supplier proposals (PDF), asks an LLM to score each one against criteria stored in SQLite, and ranks the suppliers. The model only judges the content of each proposal. The weighted score, benchmark, gap, relative %, Peer Performance Index (PPI) and tie-breaks are worked out in plain Python.
 
-- Live app: `https://<your-app>.streamlit.app` (add after deploying)
+- Live app: https://rfp-evaluation-rclwmzy89ejm7cjc3lrd7k.streamlit.app/
+- Repository: https://github.com/Muthu-Manickam/rfp-evaluation
 - Model: `gpt-6-luna` through LiteLLM, temperature 0, JSON output
 - Stack: Streamlit, SQLite, LangGraph, LiteLLM, Pydantic, PyMuPDF, ReportLab, pytest
 - Demo: `docs/demo.mp4`, a walk through every page: criteria check, a live run, each Results tab, a score change and lock, history, and a run with a blank and a corrupted PDF
