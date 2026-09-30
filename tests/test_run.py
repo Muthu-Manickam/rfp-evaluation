@@ -48,7 +48,7 @@ def test_a_reply_that_is_not_json_is_asked_again(monkeypatch):
         return "not json" if replies[supplier] == 1 else good
 
     monkeypatch.setattr(run_module, "ask_model", fake_model)
-    result = run_evaluation(sample_proposals()[:2], "Retry", Settings("gpt-6-luna", "key", None, True))
+    result = run_evaluation(sample_proposals()[:2], "Retry", Settings("groq/openai/gpt-oss-120b", "key", None, True))
     assert all(s["attempts"] == 2 for s in result["suppliers"])
     assert all(c["score"] == 8 for s in result["suppliers"] for c in s["criteria"])
 
@@ -60,7 +60,7 @@ def test_a_failed_run_does_not_show_the_key(monkeypatch):
 
     monkeypatch.setattr(run_module, "ask_model", failing_model)
     with pytest.raises(RuntimeError) as error:
-        settings = Settings("gpt-6-luna", "sk-secret-123", "https://llm.internal.example.com/v1", True)
+        settings = Settings("groq/openai/gpt-oss-120b", "sk-secret-123", "https://llm.internal.example.com/v1", True)
         run_evaluation(sample_proposals()[:2], "Fail", settings)
     message = str(error.value)
     assert "sk-secret-123" not in message and "example.com" not in message

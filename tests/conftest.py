@@ -7,7 +7,7 @@ from rfp_evaluation.evaluate import Settings
 from rfp_evaluation.validate import Proposal
 
 DATA = Path(__file__).resolve().parent.parent / "data"
-MOCK = Settings("gpt-6-luna", None, None, False)
+MOCK = Settings("groq/openai/gpt-oss-120b", None, None, False)
 SAMPLES = [
     ("Meridian Softworks", "2026-09-10", 4.5, "Meridian_Softworks_Technical_and_Commercial_Proposal.pdf"),
     ("QuickDesk Solutions", "2026-09-08", 2.0, "QuickDesk - Proposal for Sundaram Retail.pdf"),
